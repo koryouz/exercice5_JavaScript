@@ -1,5 +1,12 @@
 function toggle() {
-  var nb1 = document.getElementById("firstNumber").value;
-  var nb2 = document.getElementById("secondNumber").value;
-  alert(Math.floor(nb1)+"\n"+Math.floor(nb2));
+  var regexName = /[.][0-9]+$/;
+  var firstNumber = document.getElementById('firstNumber').value;
+  var secondNumber = document.getElementById('secondNumber').value;
+  var result = Math.floor(firstNumber)*secondNumber;
+
+  if (firstNumber.match(regexName) && secondNumber.match(regexName)){
+    alert(result);
+  }else {
+    alert('Characteres invalides (chiffre à virgule)');
+  }
 }
